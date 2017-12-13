@@ -295,10 +295,10 @@
     <Content Include="Template\js\jquery-migrate-1.2.1.min.js" />
     <Content Include="Template\js\jquery.cookie.js" />
     <Content Include="Template\js\jquery.easing.1.3.js" />
-    <Content Include="Template\js\jquery.form.min.js" />
+    <Content Include="Template\js\mailform\jquery.form.min.js" />
     <Content Include="Template\js\jquery.js" />
-    <Content Include="Template\js\jquery.rd-input-label.js" />
-    <Content Include="Template\js\jquery.rd-mailform.min.js" />
+    <Content Include="Template\js\mailform\jquery.rd-input-label.js" />
+    <Content Include="Template\js\mailform\jquery.rd-mailform.min.js" />
     <Content Include="Template\js\jquery.rd-navbar.js" />
     <Content Include="Template\js\jquery.rd-parallax.js" />
     <Content Include="Template\js\jquery.ui.totop.js" />

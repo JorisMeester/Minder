@@ -9,11 +9,11 @@ function isIE() {
 
 /* cookie.JS
  ========================================================*/
-include('js/jquery.cookie.js');
+include('/Template/js/jquery.cookie.js');
 
 /* Easing library
  ========================================================*/
-include('js/jquery.easing.1.3.js');
+include('/Template/js/jquery.easing.1.3.js');
 
 
 /* Stick up menus  ========================================================*/
@@ -21,7 +21,7 @@ include('js/jquery.easing.1.3.js');
 (function ($) {
     var o = $('html');
     if (o.hasClass('desktop')) {
-        include('js/tmstickup.js');
+        include('/Template/js/tmstickup.js');
 
         $(document).ready(function () {
             $('#stuck_container').TMStickUp({})
@@ -36,7 +36,7 @@ include('js/jquery.easing.1.3.js');
 (function ($) {
     var o = $('html');
     if (o.hasClass('desktop')) {
-        include('js/jquery.ui.totop.js');
+        include('/Template/js/jquery.ui.totop.js');
 
         $(document).ready(function () {
             $().UItoTop({
@@ -53,7 +53,7 @@ include('js/jquery.easing.1.3.js');
 (function ($) {
     var o = $('[data-equal-group]');
     if (o.length > 0) {
-        include('js/jquery.equalheights.js');
+        include('/Template/js/jquery.equalheights.js');
     }
 })(jQuery);
 
@@ -72,7 +72,7 @@ include('js/jquery.easing.1.3.js');
 ;
 (function ($) {
     function include(url) {
-        document.write('<script src="js/' + url + '"></script>');
+        document.write('<script src="/Template/js/' + url + '"></script>');
         return false;
     }
 
@@ -88,7 +88,7 @@ include('js/jquery.easing.1.3.js');
 (function ($) {
     var o = $('.resp-tabs');
     if (o.length > 0) {
-        include('js/jquery.responsive.tabs.js');
+        include('/Template/js/jquery.responsive.tabs.js');
 
         $(document).ready(function () {
             o.easyResponsiveTabs();
@@ -101,7 +101,7 @@ include('js/jquery.easing.1.3.js');
  ========================================================*/
 ;
 (function ($) {
-    include('js/jquery.rd-navbar.js');
+    include('/Template/js/jquery.rd-navbar.js');
 })(jQuery);
 
 
@@ -110,7 +110,7 @@ include('js/jquery.easing.1.3.js');
 ;
 (function ($) {
     if (isIE() && isIE() < 11) {
-        include('js/pointer-events.js');
+        include('/Template/js/pointer-events.js');
         $('html').addClass('lt-ie11');
         $(document).ready(function () {
             PointerEventsPolyfill.initialize({});
@@ -124,7 +124,7 @@ include('js/jquery.easing.1.3.js');
 (function ($) {
     var o = $('.table1');
     if (o.length > 0) {
-        include('js/stacktable.js');
+        include('/Template/js/stacktable.js');
         $(document).ready(function () {
             o.stacktable();
         });
@@ -139,10 +139,10 @@ include('js/jquery.easing.1.3.js');
     var o = $('#camera');
     if (o.length > 0) {
         if (!(isIE() && (isIE() > 9))) {
-            include('js/jquery.mobile.customized.min.js');
+            include('/Template/js/jquery.mobile.customized.min.js');
         }
 
-        include('js/camera.js');
+        include('/Template/js/camera.js');
 
         $(document).ready(function () {
             o.camera({
@@ -170,7 +170,7 @@ include('js/jquery.easing.1.3.js');
     var o = document.getElementById("google-map");
     if (o) {
         include('//maps.google.com/maps/api/js?sensor=false');
-        include('js/jquery.rd-google-map.js');
+        include('/Template/js/jquery.rd-google-map.js');
 
         $(document).ready(function () {
             var o = $('#google-map');
@@ -228,7 +228,7 @@ include('js/jquery.easing.1.3.js');
 (function ($) {
     var o = $('.owl-carousel');
     if (o.length) {
-        include('js/owl.carousel.min.js');
+        include('/Template/js/owl.carousel.min.js');
         var isTouch = "ontouchstart" in window;
 
         function preventScroll(e) {
@@ -354,7 +354,7 @@ include('js/jquery.easing.1.3.js');
 
     if ((navigator.userAgent.toLowerCase().indexOf('msie') == -1 ) || (isIE() && isIE() > 9)) {
         if (o.hasClass('desktop')) {
-            include('js/wow.js');
+            include('/Template/js/wow.js');
 
             $(document).ready(function () {
                 new WOW().init();
@@ -419,7 +419,7 @@ document.write('<meta name="viewport" content="width=device-width,initial-scale=
 (function ($) {
     var o = $('.search-form');
     if (o.length > 0) {
-        include('js/TMSearch.js');
+        include('/Template/js/TMSearch.js');
     }
 })(jQuery);
 
@@ -432,7 +432,7 @@ document.write('<meta name="viewport" content="width=device-width,initial-scale=
 (function ($) {
     var o = $('.form-label');
     if (o.length) {
-        include('js/mailform/jquery.rd-input-label.js');
+        include('/Template/js/mailform/jquery.rd-input-label.js');
 
         $(document).ready(function () {
             o.RDInputLabel();
@@ -446,8 +446,8 @@ document.write('<meta name="viewport" content="width=device-width,initial-scale=
 (function ($) {
     var o = $('.rd-mailform');
     if (o.length > 0) {
-        include('js/mailform/jquery.form.min.js');
-        include('js/mailform/jquery.rd-mailform.min.js');
+        include('/Template/js/mailform/jquery.form.min.js');
+        include('/Template/js/mailform/jquery.rd-mailform.min.js');
 
         $(document).ready(function () {
             var o = $('.rd-mailform');
@@ -500,7 +500,7 @@ document.write('<meta name="viewport" content="width=device-width,initial-scale=
 (function ($) {
     var o = $('.thumb');
     if (o.length > 0) {
-        include('js/jquery.touch-touch.js');
+        include('/Template/js/jquery.touch-touch.js');
 
         $(document).ready(function () {
             o.touchTouch();
@@ -533,7 +533,7 @@ $(document).ready(function () {
 (function ($) {
     var o = $(".isotope");
     if (o.length) {
-        include('js/isotope.pkgd.min.js');
+        include('/Template/js/isotope.pkgd.min.js');
 
         $(document).ready(function () {
             o.each(function () {
@@ -580,7 +580,7 @@ $(document).ready(function () {
 (function ($, undefined) {
     var o = $(".swiper-slider");
     if (o.length) {
-        include('js/jquery.swiper.min.js');
+        include('/Template/js/jquery.swiper.min.js');
 
         function getSwiperHeight(object, attr) {
             var val = object.attr("data-" + attr),
@@ -746,7 +746,7 @@ $(document).ready(function () {
  =============================================*/
 ;
 (function ($) {
-    include('js/jquery.rd-parallax.js');
+    include('/Template/js/jquery.rd-parallax.js');
 })(jQuery);
 
 
@@ -756,7 +756,7 @@ $(document).ready(function () {
 (function ($) {
     var o = $('.accordion');
     if (o.length > 0) {
-        include('js/jquery.ui.accordion.min.js');
+        include('/Template/js/jquery.ui.accordion.min.js');
 
         $(document).ready(function () {
             o.accordion({
