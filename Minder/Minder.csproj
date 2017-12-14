@@ -243,6 +243,7 @@
     <Content Include="Template\images\arrows.png" />
     <Content Include="Template\images\bg-head.jpg" />
     <Content Include="Template\images\brand.png" />
+    <Content Include="Template\images\minder-logo.png" />
     <Content Include="Template\images\page-1_bg-head.jpg" />
     <Content Include="Template\images\page-1_img05.jpg" />
     <Content Include="Template\images\page-1_img06.jpg" />
