@@ -29,5 +29,9 @@ namespace Minder.Models
         {
             return new ApplicationDbContext();
         }
+        
+        public DbSet<Profile> Profiles { get; set; }
+        public DbSet<Interest> Interests { get; set; }
+        public DbSet<Picture> Pictures { get; set; }
     }
 }
