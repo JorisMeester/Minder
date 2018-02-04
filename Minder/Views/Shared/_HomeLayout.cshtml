@@ -14,7 +14,7 @@
     <link href="~/Template/css/bootstrap.css" rel="stylesheet">
     <!-- Links -->
     <!--JS-->
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
     <script src="~/Template/js/jquery-migrate-1.2.1.min.js"></script>
     <!--[if lt IE 9]>
     <div style=' clear: both; text-align:center; position: relative;'>
@@ -30,13 +30,13 @@
 <body>
     <div class="page">
         <!--========================================================
-                              HEADER
-    =========================================================-->
+                                  HEADER
+        =========================================================-->
         <header>
             <div id="stuck_container" class="stuck_container">
                 <div class="container container-wide">
                     <div class="navbar-brand">
-                        <a href="index.html">
+                        <a href="/Home/Index">
                             <img class="img-wide" src="~/Template/images/minder-logo.png" style="max-width:20%" alt="" />
                         </a>
                     </div>
@@ -44,45 +44,32 @@
                         <div class="navbar-header center-xs">
                         </div>
                         <ul class="navbar-nav sf-menu navbar-right" data-type="navbar">
-                            <li class="active">
-                                <a href="Index.html">Home</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="index-1.html">Register</a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="#">Most Popular</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Latest News</a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a href="#">Latest</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Archive</a>
-                                            </li>
-                                            <li>
-                                                <a href="404.html">404</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Company Info</a>
-                                    </li>
-                                </ul>
+                            <li>
+                                <a href="/Home/Index">Home</a>
                             </li>
                             <li>
-                                <a href="index-2.html">Search</a>
+                                <a href="/Account/Register">Register</a>
                             </li>
                             <li>
-                                <a href="index-3.html">FAQ</a>
-                            </li>
-
-                            <li>
-                                <a href="index-4.html">Contacts</a>
+                                <a href="/Account/Login">Log in</a>
                             </li>
                         </ul>
+                        <hr />
+                        @if (Context.User.Identity.IsAuthenticated)
+                        {
+                            <ul class="navbar-nav sf-menu navbar-right" data-type="navbar">
+                                <li>
+                                    <a href="index-2.html">Search</a>
+                                </li>
+                                <li>
+                                    <a href="index-3.html">FAQ</a>
+                                </li>
+
+                                <li>
+                                    <a href="index-4.html">Contacts</a>
+                                </li>
+                            </ul>
+                        }
                         <div class="trig">
                             <p>Menu</p>
                             <span></span>
@@ -94,8 +81,8 @@
         @RenderBody()
 
         <!--========================================================
-                             FOOTER
-     =========================================================-->
+                                FOOTER
+        =========================================================-->
         <footer>
 
             <section>
@@ -122,9 +109,9 @@
                     }; var a = f[z]._ = {
                     }, q = c.methods.length; while (q--) {
                         (function (n) {
-                        f[z][n] = function () {
-                            f[z]("call", n, arguments)
-                        }
+                            f[z][n] = function () {
+                                f[z]("call", n, arguments)
+                            }
                         })(c.methods[q])
                     } a.l = c.loader; a.i = nt; a.p = {
                         0: +new Date
@@ -170,6 +157,7 @@
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();</script>
+    @RenderSection("Scripts", false)
 </body><!-- Google Tag Manager -->
 <noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '../../www.googletagmanager.com/gtm5445.html?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-P9FT69');</script><!-- End Google Tag Manager -->

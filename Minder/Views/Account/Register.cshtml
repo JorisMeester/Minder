@@ -1,41 +1,153 @@
-﻿@model Minder.Models.RegisterViewModel
+﻿@using Minder.Models
+@model Minder.Models.RegisterViewModel
 @{
     ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
-
-<h2>@ViewBag.Title.</h2>
-
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+<main class="text-center">
+    <div class="row">
+        <h2 class="hidden-xs">@ViewBag.Title</h2>
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div class="rd-mailform">
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h5 class="text-center">Create an account and find true love.</h5>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <hr />
+                            @Html.ValidationSummary("", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row row-no-gutter flow-offset-2">
+                        <div class="col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Nickname, new { @class = "col-md-2" })
+                                @Html.TextBoxFor(m => m.Nickname, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Gender, new { @class = "col-md-2" })
+                                <div class="form-group radio">
+                                    <label class="radio-inline"> Male @Html.RadioButtonFor(m => m.Gender, GenderEnum.Male, new { })</label>
+                                    <label class="radio-inline"> Female @Html.RadioButtonFor(m => m.Gender, GenderEnum.Female, new { })</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Gender, new { @class = "col-md-2" })
+                                <div class="form-group radio">
+                                    <label class="radio-inline"> Men @Html.RadioButtonFor(m => m.GenderInterests, GenderInterestEnum.Men)</label>
+                                    <label class="radio-inline"> Women @Html.RadioButtonFor(m => m.GenderInterests, GenderInterestEnum.Women)</label>
+                                    <label class="radio-inline"> Both @Html.RadioButtonFor(m => m.GenderInterests, GenderInterestEnum.Both)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email, new { @class = "col-md-2" })
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Password, new { @class = "col-md-2" })
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2" })
+                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" class="btn btn-default" value="Register" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-}
-
+    <div class="col-sm-2"></div>
+</main>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+@*
+    <div class="form-group radio">
+                                <label class="radio-inline" for="inlineRadio1">
+                                    Woman
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Woman">
+                                </label>
+                                <label class="radio-inline" for="inlineRadio2">
+                                    Man
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Man">
+                                </label>
+                            </div>
+
+    <div class="col-md-10 col-md-offset-1 col-lg-4 col-lg-offset-0 grid-2">
+        <form class="rd-mailform" method="post" action="http://livedemo00.template-help.com/wt_58784/bat/rd-mailform.php">
+            <!-- RD Mailform Type -->
+            <input type="hidden" name="form-type" value="contact">
+            <!-- END RD Mailform Type -->
+            <h5 class="text-center">It`s free to join</h5>
+
+            <div class="row row-no-gutter flow-offset-2">
+                <div class="col-sm-6">
+                    <div class="form-group mfInput">
+                        <label class="form-label rd-input-label" data-add-placeholder="" for="mailform-input-fname">
+                            First
+                            name
+                            <span class="mfPlaceHolder"></span>
+                        </label>
+                        <input id="mailform-input-fname" type="text" name="first-name">
+                    </div>
+                    <div class="form-group mfInput">
+                        <label class="form-label rd-input-label" data-add-placeholder="" for="mailform-input-lname">
+                            Last
+                            name
+                            <span class="mfPlaceHolder"></span>
+                        </label>
+                        <input id="mailform-input-lname" type="text" name="first-name">
+                    </div>
+                    <div class="form-group radio">
+                        <label class="radio-inline" for="inlineRadio1">
+                            Woman
+                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Woman">
+                        </label>
+                        <label class="radio-inline" for="inlineRadio2">
+                            Man
+                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Man">
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group mfInput">
+                        <label class="form-label rd-input-label" data-add-placeholder="" for="mailform-input-email">Email<span class="mfPlaceHolder"></span></label>
+                        <input id="mailform-input-email" type="text" name="email">
+                    </div>
+                    <div class="form-group mfInput">
+                        <label class="form-label rd-input-label" data-add-placeholder="" for="mailform-input-pass">Password<span class="mfPlaceHolder"></span></label>
+                        <input id="mailform-input-pass" type="text" name="pass">
+                    </div>
+                    <div class="form-group mfInput">
+                        <label class="form-label rd-input-label" data-add-placeholder="" for="mailform-input-pass-confirm">
+                            Confirm
+                            Password
+                            <span class="mfPlaceHolder"></span>
+                        </label>
+                        <input id="mailform-input-pass-confirm" type="text" name="pass">
+                    </div>
+                </div>
+            </div>
+            <div class="row row-no-gutter flow-offset-2">
+                <div class="col-sm-6">
+                    <div class="form-group btn-wr text-center">
+                        <a href="#" class="btn btn-primary">Get started now</a>
+
+                        <div class="mfInfo mfProgress"><span class="cnt"></span><span class="loader"></span><span class="msg"></span></div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+*@
