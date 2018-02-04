@@ -35,7 +35,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    @Html.LabelFor(m => m.Gender, new {@class = "col-md-2"})
+                                    <label class="col-md-2">I'm interested in</label>
                                     <div class="form-group radio">
                                         <label class="radio-inline"> Men @Html.RadioButtonFor(m => m.GenderInterests, GenderInterestEnum.Men)</label>
                                         <label class="radio-inline"> Women @Html.RadioButtonFor(m => m.GenderInterests, GenderInterestEnum.Women)</label>
