@@ -21,10 +21,8 @@ namespace Minder.Models
 
         // zorgen dat alleen een datum gekozen wordt, geen tijd
         [DataType(DataType.Date)]
-        // zorgen dat het format overeenkomt met wat de date control wil, zie http://w3c.github.io/html-reference/input.date.html
-        // een alternatieve oplossing die een custom date format mogelijk maakt is het zelf schrijven (niet scaffolden)
-        // van de date input control en deze koppelen aan een javascript datepicker
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+       
+        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Birthdate { get; set; }
 
         [Display(Name = "Height (in centimeters)")]

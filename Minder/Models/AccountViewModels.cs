@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Minder.Models
@@ -75,6 +76,9 @@ namespace Minder.Models
 
         [Required]
         public GenderInterestEnum GenderInterests { get; set; }
+
+        [Required]
+        public DateTime Birthdate { get; set; }
 
         [Required]
         [EmailAddress]
