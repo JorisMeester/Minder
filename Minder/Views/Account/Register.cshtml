@@ -11,56 +11,19 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
                 <div class="rd-mailform">
-                    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+                    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", name = "formRegister" }))
                     {
                         @Html.AntiForgeryToken()
                         <h5 class="text-center">Create an account and find true love.</h5>
                         <div class="row">
                             <div class="col-sm-12">
-                                <hr/>
-                                @Html.ValidationSummary("", new {@class = "text-danger"})
+                                <hr />
+                                @Html.ValidationSummary("", new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="row row-no-gutter flow-offset-2">
+                            <div class="col-sm-3"></div>
                             <div class="col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    @Html.LabelFor(m => m.Nickname, new { @class = "col-md-2" })
-                                    @Html.TextBoxFor(m => m.Nickname, new { @class = "form-control" })
-                                </div>
-                                <div class="form-group">
-                                    @Html.LabelFor(m => m.Gender, new { @class = "col-md-2" })
-                                    <div class="form-group radio">
-                                        <label class="radio-inline"> Male @Html.RadioButtonFor(m => m.Gender, GenderEnum.Male, new { })</label>
-                                        <label class="radio-inline"> Female @Html.RadioButtonFor(m => m.Gender, GenderEnum.Female, new { })</label>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-2">I'm interested in</label>
-                                    <div class="form-group radio">
-                                        <label class="radio-inline"> Men @Html.RadioButtonFor(m => m.GenderInterests, GenderInterestEnum.Men)</label>
-                                        <label class="radio-inline"> Women @Html.RadioButtonFor(m => m.GenderInterests, GenderInterestEnum.Women)</label>
-                                        <label class="radio-inline"> Both @Html.RadioButtonFor(m => m.GenderInterests, GenderInterestEnum.Both)</label>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    @Html.LabelFor(m => m.Birthdate, new { @class = "col-md-2" })
-                                    @Html.TextBoxFor(m => m.Birthdate, new { @class = "form-control", type = "date" })
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-xs-12">
-                                
-                                <div class="form-group">
-                                    @Html.LabelFor(m => m.Ethnicity, new { @class = "col-md-2" })
-                                    @Html.EnumDropDownListFor(m => m.Ethnicity, "Select your current education", new { @class = "form-control" })
-                                </div>
-                                <div class="form-group">
-                                    @Html.LabelFor(m => m.Height, new { @class = "col-md-2" })
-                                    @Html.TextBoxFor(m => m.Height, new { @class = "form-control", type = "number" })
-                                </div>
-                                <div class="form-group">
-                                    @Html.LabelFor(m => m.Education, new { @class = "col-md-2" })
-                                    @Html.EnumDropDownListFor(m => m.Education, "Select your current education", new { @class = "form-control" })
-                                </div>
                                 <div class="form-group">
                                     @Html.LabelFor(m => m.Email, new { @class = "col-md-2" })
                                     @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
@@ -74,11 +37,12 @@
                                     @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
                                 </div>
                                 <div class="form-group">
-                                    <div class="col-md-offset-2 col-md-10">
-                                        <input type="submit" class="btn btn-default" value="Register" />
+                                    <div class="form-group btn-wr text-center">
+                                    <input class="btn btn-primary" type="submit" value="Register">
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-sm-3"></div>
                         </div>
                     }
                 </div>
@@ -86,13 +50,15 @@
             <div class="col-sm-2"></div>
         </div>
         <div class="container container-wide">
-            <p>Challenges of traditional dating force more and more people to look for soul mates in the cyberspace.
+            <p>
+                Challenges of traditional dating force more and more people to look for soul mates in the cyberspace.
                 In fact, online dating has radically changed the way lonely hearts meet each other today. One of its
                 advantages is a possibility to remove the location barrier, which allows singles to expand the scope
                 of their search. We all know that true love finds itself, but the world is so spacious that you may
                 miss a rare chance to encounter your one and only in the daily life. What’s more, most loners are
                 too shy to approach the person they cherish warm feelings for. This is when a dating site comes in
-                handy, as it allows for comfortable communication by exchanging letters or via live chats. </p>
+                handy, as it allows for comfortable communication by exchanging letters or via live chats.
+            </p>
         </div>
     </section>
     <!-- Building relationships -->
@@ -250,3 +216,4 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+

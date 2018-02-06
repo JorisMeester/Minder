@@ -17,15 +17,27 @@ namespace Minder.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Profiles
+        // GET: Profiles/Index
         public ActionResult Index()
         {
             var profiles = db.Profiles.Include(p => p.ProfilePicture);
             return View(profiles.ToList());
         }
 
-        // GET: Profiles
+        // GET: Profiles/Search
         public ActionResult Search()
+        {
+            return View();
+        }
+
+        // GET: Profiles/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+        
+        // GET: Profiles/Edit
+        public ActionResult Edit()
         {
             return View();
         }
@@ -60,7 +72,7 @@ namespace Minder.Controllers
 
 
         [Authorize]
-        public ActionResult Edit()
+        public ActionResult _EditProfilePartial()
         {
             // ingelogde user ophalen via usermanager
             var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
@@ -82,7 +94,7 @@ namespace Minder.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Profile profile, HttpPostedFileBase ImageUpload)
+        public ActionResult _EditProfilePartial(Profile profile, HttpPostedFileBase ImageUpload)
         {
             // server side validatie van het model object
             if (ModelState.IsValid)
@@ -139,7 +151,7 @@ namespace Minder.Controllers
 
                 return View(storedProfile);
             }
-            return View(profile);
+            return RedirectToAction("Details", "Profiles");
         }
 
 

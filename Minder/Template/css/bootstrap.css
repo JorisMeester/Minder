@@ -4,8 +4,8 @@
 @import "animate.css";
 
 @font-face {
-    font-family: 'chalet-new-york-nineteen-seventy';
-    src: url('../../fonts/chalet-new-york-nineteen-seventy.ttf') format('truetype');
+    font-family: 'Comfortaa';
+    src: url('../../fonts/Comfortaa.ttf') format('truetype');
 }
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -2550,7 +2550,7 @@ header {
 }
 
     header.mod-1 {
-        background: linear-gradient(to right, rgba(255,255,255,1), rgba(151, 216, 188,1), rgba(95,95,95,1), rgba(40,40,40,1));
+        background: linear-gradient(to right, rgba(255,255,255,1), rgba(151, 216, 188,1), rgba(127, 189, 255,1), rgba(253, 186, 255,1));
         background-size: cover;
         position: static;
         padding-bottom: 0.8125rem;
@@ -3790,7 +3790,7 @@ address {
 .scroll-right {
     display: none;
     position: absolute;
-    font-family: 'chalet-new-york-nineteen-seventy', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -4148,7 +4148,7 @@ div.grid-4 img {
             font-size: 4.3125rem;
             color: #decfc2;
             font-weight: 700;
-            font-family: 'chalet-new-york-nineteen-seventy', sans-serif;
+            font-family: 'Comfortaa', sans-serif;
             position: absolute;
             top: -1.0625rem;
             left: 0;
@@ -5917,7 +5917,7 @@ select[multiple].form-group-lg .form-control {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     z-index: 1;
-    font-family: 'chalet-new-york-nineteen-seventy', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
     max-width: 100%;
     padding: 0.5rem 1.25rem;
     font-size: 1.125rem;
@@ -7645,7 +7645,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
             .navbar-nav > li > a {
                 display: inline-block;
                 position: relative;
-                font-family: 'chalet-new-york-nineteen-seventy', sans-serif;
+                font-family: 'Comfortaa', sans-serif;
                 font-weight: 700;
             }
 
@@ -7699,7 +7699,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
 @media (min-width: 768px) {
     .trig {
-        font-family: 'chalet-new-york-nineteen-seventy', sans-serif;
+        font-family: 'Comfortaa', sans-serif;
         font-size: 1.125rem;
         line-height: 1.66666667;
         letter-spacing: 0.02em;
@@ -7709,7 +7709,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
         position: fixed;
         right: 12.5%;
         top: 3.8125rem;
-        color: #28d68b;
+        color: #565656;
     }
 }
 
@@ -7733,7 +7733,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    background: #28d68b;
+    background: #565656;
 }
 
     .trig span:after,
@@ -7748,7 +7748,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
         transition: all 0.3s ease;
         width: 2rem;
         height: 5px;
-        background-color: #28d68b;
+        background-color: #565656;
         backface-visibility: hidden;
         -webkit-border-radius: 2px;
         -moz-border-radius: 2px;
@@ -7766,16 +7766,16 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     }
 
 .trig:hover {
-    color: #00c673;
+    color: #959595;
 }
 
     .trig:hover span {
-        background: #00c673;
+        background: #959595;
     }
 
         .trig:hover span:before,
         .trig:hover span:after {
-            background: #00c673;
+            background: #959595;
         }
 
 .trig-active {
@@ -12791,7 +12791,7 @@ input:focus + .search-form_liveout {
     top: 1.3125rem;
     width: 1.5rem;
     height: 1.5rem;
-    font-family: 'chalet-new-york-nineteen-seventy', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
     font-size: 1.25rem;
     line-height: inherit;
     color: #27211f;

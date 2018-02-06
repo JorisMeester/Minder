@@ -1,0 +1,79 @@
+﻿@using Minder.Models
+@model Profile
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "Multipart/form-data", @class = "form-horizontal", role = "form", name = "formEditProfile" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-sm-12">
+            <hr />
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row row-no-gutter flow-offset-2">
+        <div class="col-sm-6 col-xs-12">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Nickname, new { @class = "col-md-2" })
+                @Html.TextBoxFor(m => m.Nickname, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Gender, new { @class = "col-md-2" })
+                <div class="form-group radio">
+                    <label class="radio-inline"> Male @Html.RadioButtonFor(m => m.Gender, GenderEnum.Male, new { })</label>
+                    <label class="radio-inline"> Female @Html.RadioButtonFor(m => m.Gender, GenderEnum.Female, new { })</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2">I'm interested in</label>
+                <div class="form-group radio">
+                    <label class="radio-inline"> Men @Html.RadioButtonFor(m => m.GenderInterests, GenderInterestEnum.Men)</label>
+                    <label class="radio-inline"> Women @Html.RadioButtonFor(m => m.GenderInterests, GenderInterestEnum.Women)</label>
+                    <label class="radio-inline"> Both @Html.RadioButtonFor(m => m.GenderInterests, GenderInterestEnum.Both)</label>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Birthdate, new { @class = "col-md-2" })
+                @Html.TextBoxFor(m => m.Birthdate, new { @class = "form-control", type = "date" })
+            </div>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Ethnicity, new { @class = "col-md-2" })
+                @Html.EnumDropDownListFor(m => m.Ethnicity, "Select your current education", new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Height, new { @class = "col-md-2" })
+                @Html.TextBoxFor(m => m.Height, new { @class = "form-control", type = "number" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Education, new { @class = "col-md-2" })
+                @Html.EnumDropDownListFor(m => m.Education, "Select your current education", new { @class = "form-control" })
+            </div>
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.ProfilePicture, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @if (Model.ProfilePicture != null)
+                        {
+                            @Html.HiddenFor(model => model.ProfilePicture.Id)
+                            @Html.HiddenFor(model => model.ProfilePicture.Filename)
+                            <br /><img src="~/Content/Uploads/@Model.Id/@Model.ProfilePicture.Filename" class="image" /><br />
+                        }
+                        <input type="file" name="ImageUpload" class="form-control" />
+                        @Html.ValidationMessageFor(model => model.ProfilePicture, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="form-group btn-wr text-center">
+                <input class="btn btn-primary" type="submit" value="Save profile and check it out">
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

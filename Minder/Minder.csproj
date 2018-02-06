@@ -212,6 +212,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Picture.cs" />
     <Compile Include="Models\Profile.cs" />
+    <Compile Include="Models\ProfileEditViewModel.cs" />
     <Compile Include="Models\ProfileResultViewModel.cs" />
     <Compile Include="Models\ProfileSearchViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -382,6 +383,7 @@
     <Content Include="Views\Profiles\Details.cshtml" />
     <Content Include="Views\Profiles\Edit.cshtml" />
     <Content Include="Views\Profiles\Index.cshtml" />
+    <Content Include="Views\Shared\_EditProfilePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -167,13 +167,8 @@ namespace Minder.Controllers
                         // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                         // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                         // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                        var profile = new Profile { Nickname = model.Nickname, Gender = model.Gender, GenderInterests = model.GenderInterests, Birthdate = model.Birthdate, Height = model.Height, Ethnicity = model.Ethnicity, City = model.City, Education = model.Education, ProfilePicture = model.ProfilePicture };
-                        profile.User = user;
-                        db.Profiles.Add(profile);
-                        await db.SaveChangesAsync();
-                        db.SaveChanges();
 
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Create", "Profiles");
                     }
                     AddErrors(result);
                 }
