@@ -78,7 +78,17 @@ namespace Minder.Models
         public GenderInterestEnum GenderInterests { get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
         public DateTime Birthdate { get; set; }
+
+        [Display(Name = "Height (in centimeters)")]
+        public int Height { get; set; }
+
+        public EthnicityEnum Ethnicity { get; set; }
+        public string City { get; set; }
+        public EducationEnum Education { get; set; }
+        public List<Interest> Interests { get; set; }
+        public virtual Picture ProfilePicture { get; set; }
 
         [Required]
         [EmailAddress]

@@ -192,12 +192,17 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProfilesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201802021559061_vanafnuhardwerken.cs" />
     <Compile Include="Migrations\201802021559061_vanafnuhardwerken.Designer.cs">
       <DependentUpon>201802021559061_vanafnuhardwerken.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802051741410_seed1strun.cs" />
+    <Compile Include="Migrations\201802051741410_seed1strun.Designer.cs">
+      <DependentUpon>201802051741410_seed1strun.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -215,6 +220,10 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Uploads\1\0cf38b58-6dd2-4bb8-88a6-a08a4bd526c5.jpg" />
+    <Content Include="Content\Uploads\1\15aaf9ae-cd1d-4685-88ca-6d22c60c8bc3.jpg" />
+    <Content Include="Content\Uploads\1\42ec9f0d-6ab1-48aa-a5ff-acb6e0f465bf.jpg" />
+    <Content Include="Content\Uploads\1\7ae3c8f4-fd29-4e83-9b45-f84dba792e92.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -368,6 +377,11 @@
     <Content Include="Template\fonts\MaterialIcons-Regular.woff" />
     <Content Include="Template\fonts\MaterialIcons-Regular.woff2" />
     <Content Include="Views\Shared\_MainLayout.cshtml" />
+    <Content Include="Views\Profiles\Create.cshtml" />
+    <Content Include="Views\Profiles\Delete.cshtml" />
+    <Content Include="Views\Profiles\Details.cshtml" />
+    <Content Include="Views\Profiles\Edit.cshtml" />
+    <Content Include="Views\Profiles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -388,6 +402,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201802021559061_vanafnuhardwerken.resx">
       <DependentUpon>201802021559061_vanafnuhardwerken.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802051741410_seed1strun.resx">
+      <DependentUpon>201802051741410_seed1strun.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -55,22 +55,26 @@
                         </ul>
                         <hr />
                         @if (Context.User.Identity.IsAuthenticated)
-                        {
-                            <ul class="navbar-nav sf-menu navbar-right" data-type="navbar">
-                                <li>
-                                    <a href="index-2.html">Search</a>
-                                </li>
-                                <li>
-                                    <a href="index-3.html">FAQ</a>
-                                </li>
+    {
+                    <ul class="navbar-nav sf-menu navbar-right" data-type="navbar">
+                        <li>
+                            <a href="index-2.html">Search</a>
+                        </li>
+                        <li>
+                            <a href="index-3.html">FAQ</a>
+                        </li>
 
-                                <li>
-                                    <a href="index-4.html">Contacts</a>
-                                </li>
-                            </ul>
-                        }
+                        <li>
+                            <a href="index-4.html">Contacts</a>
+                        </li>
+                    </ul>
+}
                         <div class="trig">
                             <p>Menu</p>
+                            <span></span>
+                        </div>
+                        <div class="trig">
+                            @Html.Partial("_LoginPartial")
                             <span></span>
                         </div>
                     </nav>

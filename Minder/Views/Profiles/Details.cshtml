@@ -1,0 +1,94 @@
+﻿@model Minder.Models.Profile
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<main class="text-center">
+    <section class="well-3" id="welcome">
+        <div class="row">
+            <div col-md-3 col-xs-12>
+
+            </div>
+            <div col-md-3 col-xs-12>
+                <h5>@Html.DisplayFor(model => model.Nickname)</h5>
+            </div>
+        </div>
+    </section>
+    <section class="well-6 text-left center-xs bg-secondary-variant-1">
+        <div class="container container-wide">
+            <h4>Photo Gallery</h4>
+            <div class="row flow-offset-1">
+                <ul class="marked-list col-sm-6">
+                    <li>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Nickname)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Nickname)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Gender)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Gender)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.GenderInterests)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.GenderInterests)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Birthdate)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Birthdate)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Height)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Height)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Ethnicity)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Ethnicity)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.City)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.City)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Education)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Education)
+</dd>

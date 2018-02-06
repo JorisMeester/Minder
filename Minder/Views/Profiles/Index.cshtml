@@ -1,0 +1,118 @@
+﻿@model IEnumerable<Minder.Models.Profile>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<main class="text-center">
+    @*<section class="well-3" id="welcome">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nickname)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Gender)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.GenderInterests)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Birthdate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Height)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Ethnicity)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.City)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Education)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nickname)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Gender)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GenderInterests)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Birthdate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Height)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Ethnicity)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.City)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Education)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </section>*@
+
+
+    <section class="well-7">
+        <div class="container container-wide">
+            <h3>recent profiles</h3>
+            <!-- Owl Carousel -->
+            <div class="owl-carousel offset-2 owl-theme owl-loaded" @*data-lg-items="6"*@ data-margin="30" data-loop="false" @*data-md-items="5" data-sm-items="4" data-xs-items="3" data-items="2"*@>
+                <div class="owl-stage-outer">
+                    <div class="owl-stage row" style="width: 1200px;">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                <div class="owl-item" style="width: 170px; margin-right: 30px;">
+                                    <div class="owl-item">
+                                        <img src="~/Content/Uploads/1/0cf38b58-6dd2-4bb8-88a6-a08a4bd526c5.jpg" class="img-circle img-wide" alt="">
+                                        <h5 class="small text-primary">@Html.DisplayFor(modelItem => item.Nickname)</h5>
+                                        <p class="offset-0">
+                                            <small class="text-muted">Age: @Html.DisplayFor(modelItem => item.Birthdate), @Html.DisplayFor(modelItem => item.City)</small>
+                                        </p>
+                                        @Html.ActionLink("See profile", "Details", new { id = item.Id, @class = "btn btn-xs btn-default" })
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="owl-controls">
+                    <div class="owl-nav">
+                        <div class="owl-prev fa fa-arrow-circle-left" style="display: none;"></div>
+                        <div class="owl-next fa fa-arrow-circle-right" style="display: none;"></div>
+                    </div>
+                    <div class="owl-dots" style="display: none;"></div>
+                </div>
+            </div>
+            <!-- END Owl Carousel -->
+        </div>
+    </section>
+</main>
