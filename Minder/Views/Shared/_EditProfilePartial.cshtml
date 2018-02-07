@@ -1,7 +1,7 @@
 ﻿@using Minder.Models
 @model Profile
 
-@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "Multipart/form-data", @class = "form-horizontal", role = "form", name = "formEditProfile" }))
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "Multipart/form-data", @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     <div class="row">
