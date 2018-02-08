@@ -10,7 +10,7 @@
             <h2 class="hidden-xs">@ViewBag.Title</h2>
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
-                <div class="rd-mailform">
+                <section id="loginForm">
                     @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", name = "formRegister" }))
                     {
                         @Html.AntiForgeryToken()
@@ -37,15 +37,15 @@
                                     @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
                                 </div>
                                 <div class="form-group">
-                                    <div class="form-group btn-wr text-center">
-                                    <input class="btn btn-primary" type="submit" value="Register">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" class="btn btn-default" value="Register" />
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-3"></div>
                         </div>
                     }
-                </div>
+                </section>
             </div>
             <div class="col-sm-2"></div>
         </div>
@@ -79,7 +79,6 @@
                     use dating sites for <br class="hidden-md" />
                     building relationships
                 </h4>
-
                 <p>
                     In our constantly evolving world, it’s become a common practice to use dating sites for building
                     relationships. It seems that online dating may seem like a weird, unrealizable initiative, but,

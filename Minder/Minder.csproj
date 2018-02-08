@@ -192,6 +192,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\ProfilesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -204,12 +205,17 @@
     <Compile Include="Migrations\201802051741410_seed1strun.Designer.cs">
       <DependentUpon>201802051741410_seed1strun.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802081846188_messages added.cs" />
+    <Compile Include="Migrations\201802081846188_messages added.Designer.cs">
+      <DependentUpon>201802081846188_messages added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Interest.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Message.cs" />
     <Compile Include="Models\Picture.cs" />
     <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\ProfileEditViewModel.cs" />
@@ -384,6 +390,11 @@
     <Content Include="Views\Profiles\Edit.cshtml" />
     <Content Include="Views\Profiles\Index.cshtml" />
     <Content Include="Views\Shared\_EditProfilePartial.cshtml" />
+    <Content Include="Views\Messages\Create.cshtml" />
+    <Content Include="Views\Messages\Delete.cshtml" />
+    <Content Include="Views\Messages\Details.cshtml" />
+    <Content Include="Views\Messages\Edit.cshtml" />
+    <Content Include="Views\Messages\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -407,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802051741410_seed1strun.resx">
       <DependentUpon>201802051741410_seed1strun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802081846188_messages added.resx">
+      <DependentUpon>201802081846188_messages added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
