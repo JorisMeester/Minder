@@ -1,13 +1,14 @@
 ﻿@using Minder.Models
 @model Profile
 
-@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "Multipart/form-data", @class = "form-horizontal", role = "form", name = "formEditProfile" }))
+@using (Html.BeginForm("Edit", "Profiles", FormMethod.Post, new { enctype = "Multipart/form-data", @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.Id)
     <div class="row">
         <div class="col-sm-12">
             <hr />
-            @Html.ValidationSummary("", new { @class = "text-danger" })
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="row row-no-gutter flow-offset-2">

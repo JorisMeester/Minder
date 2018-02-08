@@ -39,7 +39,20 @@ namespace Minder.Controllers
         // GET: Profiles/Edit
         public ActionResult Edit()
         {
-            return View();
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            var currentUser = manager.FindById(User.Identity.GetUserId());
+
+            
+
+            Profile storedProfile = db.Profiles.SingleOrDefault(p => p.User.Id == currentUser.Id);
+
+            if (storedProfile == null)
+            {
+                storedProfile = new  Profile();
+                storedProfile.User = currentUser;
+            }
+
+            return View(storedProfile);
         }
 
         // GET: Profiles
@@ -74,15 +87,12 @@ namespace Minder.Controllers
         [Authorize]
         public ActionResult _EditProfilePartial()
         {
-            // ingelogde user ophalen via usermanager
             var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
             var currentUser = manager.FindById(User.Identity.GetUserId());
-
-            // bijbehorend profiel ophalen uit de DB
+            
             Profile profile = db.Profiles.SingleOrDefault(p => p.User.Id == currentUser.Id);
             if (profile == null)
             {
-                // is er geen profiel, dan maken we een lege
                 profile = new Models.Profile();
             }
 
@@ -94,19 +104,15 @@ namespace Minder.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult _EditProfilePartial(Profile profile, HttpPostedFileBase ImageUpload)
+        public ActionResult Edit(Profile profile, HttpPostedFileBase ImageUpload)
         {
-            // server side validatie van het model object
             if (ModelState.IsValid)
             {
-                // ingelogde user ophalen via usermanager
                 var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
                 var currentUser = manager.FindById(User.Identity.GetUserId());
 
-                // profiel dat bij de user hoort uit de DB halen
                 Profile storedProfile = db.Profiles.SingleOrDefault(p => p.User.Id == currentUser.Id);
 
-                // geen profiel = nieuwe aanmaken en bewaren in de DB
                 if (storedProfile == null)
                 {
                     storedProfile = profile;
@@ -114,7 +120,6 @@ namespace Minder.Controllers
                     db.Profiles.Add(storedProfile);
                 }
 
-                // data overzetten van geposte object naar database object
                 storedProfile.Birthdate = profile.Birthdate;
                 storedProfile.City = profile.City;
                 storedProfile.Education = profile.Education;
@@ -124,34 +129,28 @@ namespace Minder.Controllers
                 storedProfile.Height = profile.Height;
                 storedProfile.Nickname = profile.Nickname;
 
-                // afbeelding verwerken
                 if (ImageUpload != null && ImageUpload.ContentLength > 0)
                 {
-                    // directory aanmaken
                     var uploadPath = Path.Combine(Server.MapPath("~/Content/Uploads"), storedProfile.Id.ToString());
                     Directory.CreateDirectory(uploadPath);
 
                     // TODO: oude afbeelding verwijderen
 
-                    // bestandsnaam maken
                     string fileGuid = Guid.NewGuid().ToString();
                     string extension = Path.GetExtension(ImageUpload.FileName);
                     string newFilename = fileGuid + extension;
 
-                    // bestand opslaan
                     ImageUpload.SaveAs(Path.Combine(uploadPath, newFilename));
 
-                    // opslaan in database
                     Picture pic = new Picture { Filename = newFilename };
                     storedProfile.ProfilePicture = pic;
                 }
 
-                // alle wijzigingen opslaan in de DB
                 db.SaveChanges();
 
-                return View(storedProfile);
+                return RedirectToAction("Details", "Profiles");
             }
-            return RedirectToAction("Details", "Profiles");
+            return View(Profile);
         }
 
 
