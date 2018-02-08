@@ -39,7 +39,20 @@ namespace Minder.Controllers
         // GET: Profiles/Edit
         public ActionResult Edit()
         {
-            return View();
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            var currentUser = manager.FindById(User.Identity.GetUserId());
+
+            
+
+            Profile storedProfile = db.Profiles.SingleOrDefault(p => p.User.Id == currentUser.Id);
+
+            if (storedProfile == null)
+            {
+                storedProfile = new  Profile();
+                storedProfile.User = currentUser;
+            }
+
+            return View(storedProfile);
         }
 
         // GET: Profiles
@@ -91,7 +104,7 @@ namespace Minder.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult _EditProfilePartial(Profile profile, HttpPostedFileBase ImageUpload)
+        public ActionResult Edit(Profile profile, HttpPostedFileBase ImageUpload)
         {
             if (ModelState.IsValid)
             {
@@ -135,9 +148,9 @@ namespace Minder.Controllers
 
                 db.SaveChanges();
 
-                return View(storedProfile);
+                return RedirectToAction("Details", "Profiles");
             }
-            return RedirectToAction("Details", "Profiles");
+            return View(Profile);
         }
 
 
